@@ -1,37 +1,44 @@
 <template>
-  <div>
+  <div> 
     <div id="header">
       <Search v-on:query-change="querySearch" />
     </div>
 
     <div id="main-container">
-      <h2>Todos</h2>
+      <h2>To-dos App</h2>
       <TodoAdd v-on:add-todo="addTodo"/>
       <Todos v-bind:todoslist="copyTodos" v-on:delete-todo="deleteTodo" />
+
     </div>
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+//import components 
 import Search from './components/Search';
 import Todos from './components/Todos';
 import TodoAdd from './components/TodoAdd';
 
+//integrar componentes en la app
 export default {
   name: 'App',
   components: {
     Todos, TodoAdd, Search
   },
+
+//  ----METODOS----
   methods: {
+    //Eliminar
     deleteTodo(id){
-      this.todos = this.todos.filter(todo => todo.id != id);
+      this.todos = this.todos.filter(todo => todo.id != id); //regresa todos los elementos menos el id que recibio
       this.copyTodos = [...this.todos];
     },
+    //Agregar
     addTodo(todo){
       this.todos.push(todo);
       this.copyTodos = [...this.todos];
     },
+    //Buscar
     querySearch(query){
       if(query.trim() === ''){
         this.copyTodos = [...this.todos];
@@ -44,9 +51,12 @@ export default {
       }
     }
   },
+
+  // -----DATA-----
   data(){
     return {
-      todos: [
+      //arreglo donde se encuentran las tareas (elementos)
+      todos: [ 
         {
           id: 0,
           title:  'Entrenar',
@@ -64,14 +74,15 @@ export default {
        },
        {
          id: 3,
-         title: 'Orar',
-         completed: true
+         title: 'Cocinar',
+         completed: false
        }
       ],
-      copyTodos: []
+      copyTodos: [] //define otro arreglo
     }
   },
-  created(){
+  //función que duplica el arreglo, copyTodos tiene la misma estructura que todos
+  created(){ 
     this.copyTodos = [...this.todos];
   }
 }

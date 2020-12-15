@@ -1,5 +1,5 @@
 <template>
-    <div class="todo" v-bind:class="{completed: todo.completed}">
+    <div class="todo" v-bind:class="{completed: todo.completed}"> 
         <div class="todo-body" >
             <input type="checkbox" 
                 v-bind:checked="todo.completed ? 'checked': ''"
@@ -9,6 +9,7 @@
 
         <div class="todo-actions">
             <button @click="$emit('delete-todo', todo.id)">Eliminar</button>
+
         </div>
     </div>
 </template>
@@ -19,7 +20,7 @@
         props: ['todo'],
         methods: {
             checkTodo(){
-                this.todo.completed = !this.todo.completed;
+                this.todo.completed = !this.todo.completed; //marcar y desmarcar el checkbox
             }
         }
     }

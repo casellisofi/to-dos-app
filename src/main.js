@@ -1,8 +1,14 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue' //importa modulo de vue
+import App from './App.vue' //importa el componente App
+import VueSimpleAlert from "vue-simple-alert";
 
-Vue.config.productionTip = false
 
+
+Vue.use(VueSimpleAlert);
+Vue.config.productionTip = false 
+
+
+//crea una nueva instancia de Vue
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  render: h => h(App), // la función render llama al componente que se carga inicialmente
+}).$mount('#app') 
