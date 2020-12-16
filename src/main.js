@@ -3,7 +3,6 @@ import App from './App.vue' //importa el componente App
 import VueSimpleAlert from "vue-simple-alert";
 
 
-
 Vue.use(VueSimpleAlert);
 Vue.config.productionTip = false 
 

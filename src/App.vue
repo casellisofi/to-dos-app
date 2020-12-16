@@ -30,20 +30,20 @@ export default {
   methods: {
     //Eliminar
     deleteTodo(id){
-      this.todos = this.todos.filter(todo => todo.id != id); //regresa todos los elementos menos el id que recibio
+      this.todos = this.todos.filter(todo => todo.id != id); //regresa todos los elementos menos el que recibio como parametro
       this.copyTodos = [...this.todos];
     },
     //Agregar
     addTodo(todo){
       this.todos.push(todo);
-      this.copyTodos = [...this.todos];
+      this.copyTodos = [...this.todos]; //inserta el elemento que recibió como parametro al arreglo
     },
     //Buscar
     querySearch(query){
-      if(query.trim() === ''){
+      if(query.trim() === ''){ //si el query está vacio muestra todos los elementos
         this.copyTodos = [...this.todos];
       }else{
-        const temp = this.todos.filter(todo =>{
+        const temp = this.todos.filter(todo =>{ //si no, muestra los elementos que coinciden con el query
           return todo.title.includes(query)
         });
 

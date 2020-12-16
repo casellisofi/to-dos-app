@@ -7,6 +7,8 @@
 </template>
 
 <script>
+
+//importa libreria de vue que genera id aleatorios
 import { uuid } from 'vue-uuid';
 
 export default {
@@ -21,7 +23,7 @@ export default {
             e.preventDefault();
 
             const newTodo = {
-                id: uuid.v4(),
+                id: uuid.v4(), 
                 title: this.title,
                 completed: false
             };

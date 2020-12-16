@@ -8,8 +8,13 @@
         </div>
 
         <div class="todo-actions">
-            <button @click="$emit('delete-todo', todo.id)">Eliminar</button>
-
+            <div v-if="todo.completed == true">
+            <button @click="$emit('delete-todo', todo.id)">Eliminar</button> 
+            </div>
+            <div v-else >
+             <button @click="msg() ? this.$alert('a') : this.$alert('b')"  
+              >Eliminar</button>
+            </div>
         </div>
     </div>
 </template>
@@ -20,9 +25,14 @@
         props: ['todo'],
         methods: {
             checkTodo(){
-                this.todo.completed = !this.todo.completed; //marcar y desmarcar el checkbox
+                this.todo.completed = !this.todo.completed; //permite marcar y desmarcar el checkbox
+            },
+            msg(){
+            this.$confirm('La tarea no fue realizada, desea eliminarla?').then(() => { //muestra un mensaje de confirmación
+                return true;
+               })
             }
-        }
+        } 
     }
 </script>
 
