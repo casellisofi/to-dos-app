@@ -1,11 +1,11 @@
-<template>
-  <div> 
+<template >
+  <div img src="/assets/fondo.jpg"  width="500" height="600">   
     <div id="header">
       <Search v-on:query-change="querySearch" />
     </div>
 
     <div id="main-container">
-      <h2>To-dos App</h2>
+      <h2 align="center">Tareas pendientes</h2>
       <TodoAdd v-on:add-todo="addTodo"/>
       <Todos v-bind:todoslist="copyTodos" v-on:delete-todo="deleteTodo" />
 
@@ -14,12 +14,13 @@
 </template>
 
 <script>
-//import components 
+
+/* importa los componentes */
 import Search from './components/Search';
 import Todos from './components/Todos';
 import TodoAdd from './components/TodoAdd';
 
-//integrar componentes en la app
+/* integra componentes en la app */
 export default {
   name: 'App',
   components: {
@@ -35,8 +36,8 @@ export default {
     },
     //Agregar
     addTodo(todo){
-      this.todos.push(todo);
-      this.copyTodos = [...this.todos]; //inserta el elemento que recibió como parametro al arreglo
+      this.todos.push(todo); //inserta el elemento que recibió como parametro al arreglo
+      this.copyTodos = [...this.todos];
     },
     //Buscar
     querySearch(query){
@@ -105,18 +106,21 @@ export default {
     border: solid 1px #ccc;
     width: 600px;
     margin: 100px auto;
-    
   }
 
+ /*  #fondo{
+        background-image: url(assets/fondo.jpg);
+  }
+ */
   #header{
-    background: black;
+    background: #008f6d;
     padding: 10px;
   }
 
   h2{
     color: white;
-vertical-align: middle;
+    vertical-align: middle;
     padding: 0 10px;
-    background: black;
+    background: #008f6d;
   }
 </style>

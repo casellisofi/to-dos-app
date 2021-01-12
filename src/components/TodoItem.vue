@@ -8,12 +8,8 @@
         </div>
 
         <div class="todo-actions">
-            <div v-if="todo.completed == true">
-            <button @click="$emit('delete-todo', todo.id)">Eliminar</button> 
-            </div>
-            <div v-else >
-             <button @click="msg() ? this.$alert('a') : this.$alert('b')"  
-              >Eliminar</button>
+            <div>
+            <button v-on:click="deleteItem(todo)">Eliminar</button> 
             </div>
         </div>
     </div>
@@ -27,10 +23,14 @@
             checkTodo(){
                 this.todo.completed = !this.todo.completed; //permite marcar y desmarcar el checkbox
             },
-            msg(){
-            this.$confirm('La tarea no fue realizada, desea eliminarla?').then(() => { //muestra un mensaje de confirmación
-                return true;
+            deleteItem(todo){
+                if(todo.completed){
+                     return this.$emit('delete-todo', todo.id);
+                }else{
+                    this.$confirm('La tarea no fue realizada, desea eliminarla?').then(() => { //muestra un mensaje de confirmación
+                    return this.$emit('delete-todo', todo.id);
                })
+                }
             }
         } 
     }
@@ -38,7 +38,7 @@
 
 <style scoped>
     .todo{
-        border-bottom: solid 1px #ccc;
+        border-bottom: solid 2px #ccc;
         padding: 10px;
     }
 
@@ -47,7 +47,7 @@
     }
 
     .completed{
-        color: #ccc;
+        color: #008f6d;
         text-decoration: line-through;
     }
     .completed .todo-body{
@@ -70,8 +70,8 @@
     button{
         border: none;
         border-radius: 3px;
-        padding: 10px;
-        background-color: #ccc;
+        padding: 15px;
+        background-color: #008f6d;
         color: black;
     }
     button:hover{

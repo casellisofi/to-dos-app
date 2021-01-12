@@ -2,20 +2,27 @@
 
 ## Project setup
 
+Inicialmente es necesario tener instalado node.js en su ordenador
+
+Insertar los siguientes comandos en la terminal:
+
+```
 npm install 
 
 ```
+npm install vue
 
 ### Compiles and hot-reloads for development
 ```
+npm i vue-uuid
 
 npm run serve
 ```
+npm i vue-simple-alert
 
 ### Compiles and minifies for production
 ```
-npm run build
-```
+npm run serve
 
 ### Lints and fixes files
 ```

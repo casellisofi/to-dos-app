@@ -40,9 +40,10 @@ export default {
         padding: 10px;
     }
     input{
-        padding: 10px;
+        font-size: 17px;
+        padding: 15px;
         outline: none;
-        border: solid 1px #ccc;
+        border: solid 0.5px #ccc;
         width: 100%;
     }
 </style>

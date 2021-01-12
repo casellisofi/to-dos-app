@@ -17,13 +17,15 @@ export default {
 
 <style scoped>
     #search-container{
-        width: 600px;
-        margin: 0 auto;
+        width: 700px;
+        margin: 10px auto;
     }
 
     input{
+        font-size: 17px;
         padding: 10px;
         width: 100%;
         outline: none;
+        
     }
 </style>
