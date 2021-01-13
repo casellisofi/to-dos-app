@@ -60,22 +60,22 @@ export default {
       todos: [ 
         {
           id: 0,
-          title:  'Entrenar',
+          title:  'Leer email pendientes',
           completed: false
         },
         {
          id: 1,
-         title: 'Leer',
+         title: 'Enviar email de confirmación',
          completed: true
        },
        {
          id: 2,
-         title: 'Estudiar',
+         title: 'Completar planillas de excel',
          completed: false
        },
        {
          id: 3,
-         title: 'Cocinar',
+         title: 'Crear pdf del mes',
          completed: false
        }
       ],
@@ -113,7 +113,7 @@ export default {
   }
  */
   #header{
-    background: #008f6d;
+    background: #76a083;
     padding: 10px;
   }
 
@@ -121,6 +121,6 @@ export default {
     color: white;
     vertical-align: middle;
     padding: 0 10px;
-    background: #008f6d;
+    background: #76a083;
   }
 </style>

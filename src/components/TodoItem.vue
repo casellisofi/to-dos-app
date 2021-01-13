@@ -47,7 +47,7 @@
     }
 
     .completed{
-        color: #008f6d;
+        color: #76a083;
         text-decoration: line-through;
     }
     .completed .todo-body{
@@ -71,8 +71,8 @@
         border: none;
         border-radius: 3px;
         padding: 15px;
-        background-color: #008f6d;
-        color: black;
+        background-color: #76a083;
+        color: white;
     }
     button:hover{
         background-color: #da2020;
