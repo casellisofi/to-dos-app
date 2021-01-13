@@ -108,10 +108,6 @@ export default {
     margin: 100px auto;
   }
 
- /*  #fondo{
-        background-image: url(assets/fondo.jpg);
-  }
- */
   #header{
     background: #76a083;
     padding: 10px;

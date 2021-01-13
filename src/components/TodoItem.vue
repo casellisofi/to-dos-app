@@ -25,9 +25,9 @@
             },
             deleteItem(todo){
                 if(todo.completed){
-                     return this.$emit('delete-todo', todo.id);
+                     return this.$emit('delete-todo', todo.id); //si el checkbox esta marcado elimina el item seleccionado
                 }else{
-                    this.$confirm('La tarea no fue realizada, desea eliminarla?').then(() => { //muestra un mensaje de confirmación
+                    this.$confirm('La tarea no fue realizada, desea eliminarla?').then(() => { //si no, muestra un mensaje para confirmar si desea eliminar de todos modos 
                     return this.$emit('delete-todo', todo.id);
                })
                 }
