@@ -24,5 +24,3 @@ npm run serve
 
 Ingrese localhost:8080 en su navegador para correr la aplicación
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
